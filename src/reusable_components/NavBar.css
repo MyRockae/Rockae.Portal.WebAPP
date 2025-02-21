@@ -1,0 +1,126 @@
+/* ============================================
+   NAV MENU ONLY
+============================================ */
+.web-nav .hamburger {
+    display: none; /* Hide on desktop by default */
+    cursor: pointer;
+  }
+  
+  .web-nav .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #fff;
+    transition: 0.3s;
+  }
+  
+  .web-nav .top-nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    max-width: 1900px;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(2, 37, 62, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    border-radius: 15px;
+    z-index: 1000;
+  }
+  
+  .web-nav .top-nav .logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+  
+  .web-nav .top-nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+  
+  .web-nav .top-nav .nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+  }
+  
+  .web-nav .top-nav .nav-links li a::before {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #ef689e;
+    transition: width 0.3s ease-in-out;
+    transform: translateX(-50%);
+  }
+  
+  .web-nav .top-nav .nav-links li a:hover::before {
+    width: 100%;
+  }
+  
+  .web-nav .get-started-btn {
+    padding: 10px 20px;
+    background-color: #ef689e;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .web-nav .get-started-btn:hover {
+    background-color: #e30449;
+  }
+  
+  @media (max-width: 900px) {
+  
+    /* This rearranges the nav if you want, but not mandatory */
+    .web-nav .top-nav {
+      flex-direction: column;
+      text-align: center;
+      padding: 12px 20px;
+    }
+  
+    /* IMPORTANT: Hide nav links on mobile by default */
+    .web-nav .top-nav .nav-links {
+      display: none; /* hide by default */
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 10px;
+    }
+  
+    /* When the nav has .active, show the links */
+    .web-nav .top-nav.active .nav-links {
+      display: flex;
+    }
+  
+    /* Adjust the link style for smaller screens */
+    .web-nav .top-nav .nav-links li a {
+      font-size: 16px;
+      padding: 8px 12px;
+    }
+  
+    /* Show the hamburger on mobile */
+    .web-nav .hamburger {
+      display: block;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      z-index: 1000; /* So it appears above everything */
+    }
+  
+  }
